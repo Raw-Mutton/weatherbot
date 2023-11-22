@@ -11,3 +11,22 @@ The bot has three main commands:
 
 Other notable features include:
 - Automatical scaling of the plot temperature axis
+
+### **Diary**
+
+22.11.2023:
+- Project created
+- Some initial setups done
+    - Possibly all necessary files created
+    - Telegram API connection and `start` command
+    - Weather API key created
+    - Everything is working in GitHub
+- What next:
+    - Get weather API requests running
+        - Maybe easiest to start from `temperature` command
+    - Start thinking about plots
+- Useful links:
+    - [Python API tutorial](https://www.dataquest.io/blog/python-api-tutorial/)
+    - [WeatherAPI Docs](https://www.weatherapi.com/docs/)
+    - [TGBot tutorial and docs](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions---Your-first-Bot)
+    - [TGBot code snippets](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Code-snippets)
