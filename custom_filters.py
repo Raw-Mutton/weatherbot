@@ -7,3 +7,5 @@ class Current_temp(MessageFilter):
     def filter(self, message: Message) -> bool | FilterDataDict | None:
         if message.text == "temperature":
             return True
+        
+current_temp = Current_temp()
