@@ -16,7 +16,7 @@ Other notable features include:
 
 30.11.2023:
 - Created first versions of `get_current_data()` and `get_temperature()`
-- Created a first (but working!) version of the Bot's \temperature-command & temperature-text
+- Created a first (but working!) version of the Bot's `\temperature`-command & `temperature`-text
     - Fiddled a long time with custom filters
 - What next:
     - Temperature return text looks stupid
