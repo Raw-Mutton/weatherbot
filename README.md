@@ -22,6 +22,7 @@ Other notable features include:
     - Temperature return text looks stupid
     - Plots?
     - Also other fun info from the weather API?
+    - What is the location of the weather data??? Original bot uses HEL airport?
 - Useful links:
     - [Example bot in GitHub](https://github.com/91DarioDev/forwardscoverbot)
 
