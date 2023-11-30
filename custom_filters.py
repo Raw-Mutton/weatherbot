@@ -5,7 +5,7 @@ from telegram.ext.filters import MessageFilter
 
 class Current_temp(MessageFilter):
     def filter(self, message: Message) -> bool | FilterDataDict | None:
-        if message.text == "temperature":
+        if message.text == "temperature" or message.text == "Temperature":
             return True
         
 current_temp = Current_temp()
