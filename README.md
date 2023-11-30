@@ -14,6 +14,10 @@ Other notable features include:
 
 ### **Diary**
 
+30.11.2023:
+- Created first versions of `get_current_data()` and `get_temperature()`
+
+
 22.11.2023:
 - Project created
 - Some initial setups done
