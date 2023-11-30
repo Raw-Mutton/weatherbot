@@ -14,7 +14,7 @@ logging.basicConfig(
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id = update.effective_chat.id,
-        text = "Let's get you some weather info"
+        text = "Let's get you some weather info!"
     )
 
 async def temperature(update: Update, context: ContextTypes.DEFAULT_TYPE):
