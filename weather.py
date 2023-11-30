@@ -27,9 +27,21 @@ def get_current_data():
         return None
 
 
-# def get_temperature():
-#     data = get_data()
-#     data["current"]
+def get_temperature():
+    data = get_current_data()
+    if data is None:
+        print("Failed to retrieve API data")
+        temperature = None
+    else:
+        location_stats = data["location"]
+        city = location_stats["name"]
+        current_stats = data["current"]
+        temperature = current_stats["temp_c"]
+        time = current_stats["last_updated"]
+        print(f"Current temperature in {city}: {temperature}\n Updated at {time}")
+    return (f"Current temperature in {city}: {temperature}\n Updated at {time}")
+    
 
-data = get_data()
-print(data)
+# data = get_current_data()
+# print(data["current"]["temp_c"])
+get_temperature()
