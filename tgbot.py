@@ -1,9 +1,10 @@
 import logging
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes
 import config
 
 import weather
+import custom_filters
 
 logging.basicConfig(
     format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -24,9 +25,12 @@ if __name__ == '__main__':
     application = ApplicationBuilder().token(str(config.api_key)).build()
 
     start_handler = CommandHandler('start', start)
-    temperature_handler = CommandHandler('temperature', temperature)
+    temperature_command_handler = CommandHandler('temperature', temperature)
+    temperature_message_handler = MessageHandler(filters=custom_filters.current_temp, callback=temperature)
 
     application.add_handler(start_handler)
-    application.add_handler(temperature_handler)
+    application.add_handler(temperature_command_handler)
+    application.add_handler(temperature_message_handler)
+
 
     application.run_polling()
