@@ -16,7 +16,18 @@ Other notable features include:
 
 30.11.2023:
 - Created first versions of `get_current_data()` and `get_temperature()`
+- Created a first (but working!) version of the Bot's \temperature-command & temperature-text
+    - Fiddled a long time with custom filters
+- What next:
+    - Temperature return text looks stupid
+    - Plots?
+    - Also other fun info from the weather API?
+- Useful links:
+    - [Example bot in GitHub](https://github.com/91DarioDev/forwardscoverbot)
 
+29.11.2023:
+- Testing Weather API
+    - Got it to return JSON information correctly
 
 22.11.2023:
 - Project created
