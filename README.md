@@ -14,6 +14,17 @@ Other notable features include:
 
 ### **Diary**
 
+25.1.2024:
+Almost 2 months since last edits yikes... Lots of schoolwork so less time for personal projects.
+
+- Created first version of fetcing historical hourly temperatures
+    - Currently works for only a set date (= 24.1.2024)
+    - Returns it into Telegram as a list of 24 values
+    - No custom filter yet
+- What next:
+    - History from list representation to a plot!
+    - Seems the API only gives history of one single day? I can work with that I guess.
+
 30.11.2023:
 - Created first versions of `get_current_data()` and `get_temperature()`
 - Created a first (but working!) version of the Bot's `\temperature`-command & `temperature`-text
