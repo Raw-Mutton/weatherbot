@@ -28,11 +28,23 @@ def get_history(time):
         print(f"Requests exception: {e}")
         return None
     
-def get_temperatures(time):
+def get_temperatures(time = "2024-01-24"):
     data = get_history(time)
+    all_hourly_temperatures = []
+
     if data is None:
         print("Failed to retrieve API data")
-
     else:
-        forecast = data["forecast"]["forecastday"]
-        hourly = forecast["hour"]
+        forecast = data["forecast"]#["forecastday"]
+
+        # Iterate through each forecast entry
+        for forecast_entry in forecast["forecastday"]:
+        # Access the "hour" list within each forecast entry
+            hourly_temperatures = [hour_entry["temp_c"] for hour_entry in forecast_entry["hour"]]
+        # Append the hourly temperatures to the overall list
+            all_hourly_temperatures.extend(hourly_temperatures)
+
+        #hourly = forecast["hour"]
+        #hourly_temps = [entry["temp_c"] for entry in hourly]
+        print(f"Weather history from given date: {all_hourly_temperatures}")
+    return (f"Weather history from given date: {all_hourly_temperatures}")
