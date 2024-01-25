@@ -4,6 +4,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Con
 import config
 
 import weather
+import plotter
 import custom_filters
 
 logging.basicConfig(
@@ -21,16 +22,24 @@ async def temperature(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #current_temperature = weather.get_temperature()
     await update.message.reply_text(weather.get_temperature())
 
+async def history(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(plotter.get_temperatures())
+
 if __name__ == '__main__':
     application = ApplicationBuilder().token(str(config.api_key)).build()
 
     start_handler = CommandHandler('start', start)
+
     temperature_command_handler = CommandHandler('temperature', temperature)
     temperature_message_handler = MessageHandler(filters=custom_filters.current_temp, callback=temperature)
+    
+    history_command_handler = CommandHandler('history', history)
 
     application.add_handler(start_handler)
     application.add_handler(temperature_command_handler)
     application.add_handler(temperature_message_handler)
+
+    application.add_handler(history_command_handler)
 
 
     application.run_polling()
